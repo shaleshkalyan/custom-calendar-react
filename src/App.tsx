@@ -2,7 +2,7 @@ import './App.css';
 import Calendar from './component/calendar';
 
 function App() {
-  const date1 = new Date(2025, 11, 29); 
+  const date1 = new Date(2020, 2, 23); 
 
   return (
     <div className="App">

@@ -5,36 +5,32 @@ export const CalendarContainer = styled.div`
   font-family: Arial, sans-serif;
   border: 1px solid #363738ff;
   border-radius: 8px;
-  padding: 16px;
-  // max-width: 500px;
+  padding: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  margin: 20px auto;
+  margin: 10px auto;
   background-color: #363738ff;
 `;
 
 export const Header = styled.div`
   text-align: center;
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 300;
   color: #d0d2d8ff;
-  margin-bottom: 15px;
   background-color: #363738ff;
+  padding : 4px;
 `;
 
 
 const GridBase = css`
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  text-align: center;
 `;
 
 export const DayLabels = styled.div`
   ${GridBase}
-  font-weight: 500;
+  font-weight: 300;
   color: #d0d2d8ff;
   font-size: 0.85rem;
-  padding-bottom: 8px;
-  margin-bottom: 4px;
 `;
 
 export const CalendarGrid = styled.div`
@@ -49,7 +45,7 @@ interface CellProps {
 export const Cell = styled.div.attrs<CellProps>(props => ({
     role: "gridcell" 
 }))<CellProps>`
-  padding: 4px 4px;
+  padding: 2px 4px;
   aspect-ratio: 1 / 1;  
   display: flex;
   align-items: center;
@@ -57,15 +53,17 @@ export const Cell = styled.div.attrs<CellProps>(props => ({
   font-size: 0.9rem;
   transition: background-color 0.1s;
   color: #d0d2d8ff;
+  justify-content: flex-end;
 
   ${props => props.$isInactive && css`
     color: #545252ff;
+    visibility: hidden;
   `}
 
   ${props => props.$isHighlighted && css`
     background-color: #d0d2d8ff;
     color: white;
-    font-weight: 700;
+    font-weight: 300;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     color: #363738ff; 
   `}
