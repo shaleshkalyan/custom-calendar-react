@@ -1,23 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Calendar from './component/calendar';
 
 function App() {
+  const date1 = new Date(2025, 11, 29); 
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header className="App-header" style={{ padding: '20px', backgroundColor: '#f0f0f0' }}>
+        
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', marginTop: '20px' }}>
+          
+          <div>
+            <Calendar date={date1} />
+          </div>
+        </div>
       </header>
     </div>
   );
